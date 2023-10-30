@@ -28,9 +28,7 @@ int main()
 	pasos *vPasos;					//Puntero con la direccion de inicio de un vector de paso//
 	vPasos = (pasos *)malloc(sizeof(pasos));
 	cargarPasos(&vPasos, &nPasos);
-
 	cambiar_estado (&vViajes, &nViajes);
-    menuInicio(&vUsuarios, &nUsuarios, &vVehiculos, &nVehiculos, &vViajes, &nViajes, &vPasos, &nPasos);
-    
+    	menuInicio(&vUsuarios, &nUsuarios, &vVehiculos, &nVehiculos, &vViajes, &nViajes, &vPasos, &nPasos);
 	return 0;
 }
