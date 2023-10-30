@@ -1,0 +1,5 @@
+0001-Pedro Garcia-Cadiz-administrador-admin-pg123456
+0002-Maria Rodriguez-San Fernando-usuario-usua1-mr456789
+0003-Pablo Roncoso-Puerto Real-usuario-usua2-pr789123
+0004-Laura Esquivel-Rota-usuario-usua3-le159587
+0005-Lenonardo Picon-Puerto de Santa Maria-usuario-usua4-lp753428
