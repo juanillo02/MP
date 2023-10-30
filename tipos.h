@@ -19,31 +19,31 @@ typedef struct{
 //Estructura para vehiculos.txt: Almacena informacion de los vehiculos.
 
 typedef struct{
-char Id_mat[8];
-char Id_usuario[5];
-int Num_plazas;
-char Desc_veh[51];
+ char Id_mat[8];
+ char Id_usuario[5];
+ int Num_plazas;
+ char Desc_veh[51];
 }vehiculo;
 
 //Estructura para viajes.txt: Almacena informacion de los viajes.
 
 typedef struct{
-char Id_viaje[7];
-char Id_mat[8];
-char F_inic[11];
-char H_inic[6];
-char H_fin[6];
-int Plazas_libres;
-char viaje[7];
-float importe;
-char Estado[20];
+ char Id_viaje[7];
+ char Id_mat[8];
+ char F_inic[11];
+ char H_inic[6];
+ char H_fin[6];
+ int Plazas_libres;
+ char viaje[7];
+ float importe;
+ char Estado[20];
 }viajes;
 
 //Estructura para pasos.txt: Almancena informacion de los pasos.
 
 typedef struct{
-char Id_pasos[7];
-char Poblacion[22];
+ char Id_pasos[7];
+ char Poblacion[22];
 }pasos;
 
 #endif
