@@ -28,31 +28,31 @@ void registro(usuario **vUsuarios, int *nUsuarios, vehiculo *vVehiculos, int *nV
 	fflush(stdin);
 	for(i=0;i<(*nUsuarios);i++)
 	{
-        if(strcmp((*vUsuarios)[i].login,us)==0) //Si el apodo usuario introducido coincide con algun usuario del fichero, entra en el condicional
+        	if(strcmp((*vUsuarios)[i].login,us)==0) //Si el apodo usuario introducido coincide con algun usuario del fichero, entra en el condicional
 		{	
-            if(strcmp((*vUsuarios)[i].pass,ct)==0) //Si la contrasena que el usuario ha introducido coincide con alguna contrasena del fichero, entra en el condicional
+            		if(strcmp((*vUsuarios)[i].pass,ct)==0) //Si la contrasena que el usuario ha introducido coincide con alguna contrasena del fichero, entra en el condicional
 			{	
 				aux = 1; //Sirve para comprobar que ha entrado en el condicional
 				id = (*vUsuarios)[i].id; 
-                if(strcmp((*vUsuarios)[i].perfil,"administrador")==0) //Comrprueba que el perfil del fichero coincida con "administrador" para saber si entra en el menu de administrador o entra en el menu de los usuarios
+                		if(strcmp((*vUsuarios)[i].perfil,"administrador")==0) //Comrprueba que el perfil del fichero coincida con "administrador" para saber si entra en el menu de administrador o entra en el menu de los usuarios
 				{
-                    menuAdministrador(id, vUsuarios, nUsuarios, vVehiculos, nVehiculos, vViajes, nViajes, vPasos, nPasos); 
-                }
+                    			menuAdministrador(id, vUsuarios, nUsuarios, vVehiculos, nVehiculos, vViajes, nViajes, vPasos, nPasos); 
+                		}
 				else
 				{
 					menuUsuario(id, vUsuarios, nUsuarios, vVehiculos, nVehiculos, vViajes, nViajes, vPasos, nPasos); 
-                }
-            }
+                		}
+            		}
 
-    	}
+    		}
 	}
 
-    if(aux == 0)	//Si el usuario es incorrecto, aux no cambia de valor, por lo que entra en este condicional
+	if(aux == 0)	//Si el usuario es incorrecto, aux no cambia de valor, por lo que entra en este condicional
 	{
-        puts("ERROR: Usuario o contraseña no existe.");
-        system("pause");
-        menuInicio(vUsuarios, nUsuarios, vVehiculos, nVehiculos, vViajes, nViajes, vPasos, nPasos);
-    }
+        	puts("ERROR: Usuario o contraseña no existe.");
+        	system("pause");
+        	menuInicio(vUsuarios, nUsuarios, vVehiculos, nVehiculos, vViajes, nViajes, vPasos, nPasos);
+    	}
 }
 
 
@@ -71,9 +71,9 @@ void anadirUsuarios(usuario **vUsuarios, int *nUsuarios, vehiculo *vVehiculos, i
 	puts("-A�ADIR USUARIO-");
 	*vUsuarios=realloc((usuario *)(*vUsuarios),((*nUsuarios)+1)*sizeof(usuario));		//Aumentamos la dimension del vector para ampliar el espacio
 	strcpy(str, (*vUsuarios)[*nUsuarios-1].id);
-    cadena = atoi(str);
-    cadena += 1;
-    sprintf((*vUsuarios)[*nUsuarios].id, "%04d", cadena);
+    	cadena = atoi(str);
+    	cadena += 1;
+    	sprintf((*vUsuarios)[*nUsuarios].id, "%04d", cadena);
 	puts("Escriba el nombre del nuevo usuario:");
 	gets((*vUsuarios)[*nUsuarios].nombre);	
 	fflush(stdin);																	//Liberamos el buffer
@@ -85,21 +85,21 @@ void anadirUsuarios(usuario **vUsuarios, int *nUsuarios, vehiculo *vVehiculos, i
 	puts("0.- Usuario");
 	puts("1.- Admin");
 	fflush(stdin);																				
-    do
+    	do
 	{
 		fflush(stdin);
-        scanf("%d",&p);
+        	scanf("%d",&p);
 		switch(p)
 		{
 			case 0: strcpy((*vUsuarios)[*nUsuarios].perfil,"usuario"); break;								//Copia la palabra "usuario" en la zona del perfil
-        	case 1: strcpy((*vUsuarios)[*nUsuarios].perfil,"administrador"); break;						//Copia la palabra "administrador" en la zona del perfil
-        	default: puts("ERROR: no ha escogido 1 o 0\nElige el perfil del nuevo usuario:"); break;
-        }	
-    }while(p!=1 && p!=0);
-    fflush(stdin);
-    do
+        		case 1: strcpy((*vUsuarios)[*nUsuarios].perfil,"administrador"); break;						//Copia la palabra "administrador" en la zona del perfil
+        		default: puts("ERROR: no ha escogido 1 o 0\nElige el perfil del nuevo usuario:"); break;
+        	}	
+    	}while(p!=1 && p!=0);
+    	fflush(stdin);
+    	do
 	{
-    	system("cls");
+    		system("cls");
 		puts("Escriba el apodo del nuevo usuario (5 car�cteres):");
 		scanf("%s",&usu);
 		fflush(stdin);
