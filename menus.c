@@ -17,7 +17,7 @@ void menuInicio(usuario **vUsuarios, int *nUsuarios, vehiculo *vVehiculos, int *
 	system("cls");
 	puts("- BIENVENIDO A ESI-SHARE -");
 	puts("1.- Registrarse.");
-	puts("2.- Iniciar Sesi髇.");
+	puts("2.- Iniciar Sesi贸n.");
 	do
 	{	
 		scanf("%d", &inicio);
@@ -39,9 +39,9 @@ void menuUsuario(char *id, usuario **vUsuarios, int *nUsuarios, vehiculo **vVehi
 	int usuario, i, resp;
 	system("cls");
 	puts("- BIENVENIDO -");
-	puts("Seleccione una opci髇:");
+	puts("Seleccione una opci贸n:");
 	puts("1.- Perfil");
-	puts("2.- Veh韈ulos");
+	puts("2.- Veh铆culos");
 	puts("3.- Viajes");
 	puts("4.- Salir");
 	do
@@ -51,27 +51,26 @@ void menuUsuario(char *id, usuario **vUsuarios, int *nUsuarios, vehiculo **vVehi
 		switch(usuario)
 		{
 			case 1: listarPerfil(id, vUsuarios, nUsuarios, vVehiculos, nVehiculos, vViajes, nViajes, vPasos, nPasos); system("pause"); break; 
-			case 2: 
-				for	(i = 0; i < (*nVehiculos); i++)
+			case 2: for(i = 0; i < (*nVehiculos); i++)
+				{
+					if(strcmp((*vVehiculos)[i].Id_usuario, id) == 0)
 					{
-						if(strcmp((*vVehiculos)[i].Id_usuario, id) == 0)
-						{
-							menuVehiculos(id, vUsuarios, nUsuarios, vVehiculos, nVehiculos, vViajes, nViajes, vPasos, nPasos); system("pause");
-						}
+						menuVehiculos(id, vUsuarios, nUsuarios, vVehiculos, nVehiculos, vViajes, nViajes, vPasos, nPasos); system("pause");
 					}
-						puts ("No tiene ning鷑 veh韈ulo registrado.");
-						puts ("緿esea registrar un veh韈ulo? (S o N)");
-						fflush(stdin);
-						scanf("%s", &resp);
-						fflush(stdin);
-						if('S' == resp || 's' == resp)
-						{
-							anadirVehiculoUsu(id, vUsuarios, nUsuarios, vVehiculos, nVehiculos, vViajes, nViajes, vPasos, nPasos);
-						}
-						else
-						{
-							menuUsuario(id, vUsuarios, nUsuarios, vVehiculos, nVehiculos, vViajes, nViajes, vPasos, nPasos);
-						} break;
+				}
+				puts ("No tiene ning煤n veh铆culo registrado.");
+				puts ("驴Desea registrar un veh铆culo? (S o N)");
+				fflush(stdin);
+				scanf("%s", &resp);
+				fflush(stdin);
+				if('S' == resp || 's' == resp)
+				{
+					anadirVehiculoUsu(id, vUsuarios, nUsuarios, vVehiculos, nVehiculos, vViajes, nViajes, vPasos, nPasos);
+				}
+				else
+				{
+					menuUsuario(id, vUsuarios, nUsuarios, vVehiculos, nVehiculos, vViajes, nViajes, vPasos, nPasos);
+				} break;
 			case 3: viajes_usuario(id, vUsuarios, nUsuarios, vVehiculos, nVehiculos, vViajes, nViajes, vPasos, nPasos); system("pause"); break;
 			case 4: guardar(vUsuarios, nUsuarios, vVehiculos, nVehiculos, vViajes, nViajes, vPasos, nPasos);
 			default: printf ("Error"); break;
@@ -86,9 +85,9 @@ void menuAdministrador(char *id, usuario **vUsuarios, int nUsuarios, vehiculo **
 	int administrador;
 	system("cls");
 	puts("- BIENVENIDO -");
-	puts("Seleccione una opci髇:");
+	puts("Seleccione una opci贸n:");
 	puts("1.- Usuarios");
-	puts("2.- Veh韈ulos");
+	puts("2.- Veh铆culos");
 	puts("3.- Viajes.");
 	puts("4.- Salir");
 	do
@@ -112,9 +111,9 @@ void menuVehiculos(char *id, usuario **vUsuarios, int *nUsuarios, vehiculo **vVe
 	setlocale( LC_ALL, "spanish");
 	int veh;
 	system("cls");
-	puts("Seleccione una opci髇:");
+	puts("Seleccione una opci贸n:");
 	puts("1.- Listar");
-	puts("2.- A馻dir");
+	puts("2.- A帽adir");
 	puts("3.- Eliminar.");
 	puts("4.- Modificar.");	
 	puts("5.- Volver");	
@@ -139,9 +138,9 @@ void usuarios_administrador(char *id, usuario **vUsuarios, int nUsuarios, vehicu
 	setlocale( LC_ALL, "spanish");
 	int usuarios;
 	system("cls");
-	puts("Seleccione una opci髇:");
+	puts("Seleccione una opci贸n:");
 	puts("1.- Listar");
-	puts("2.- A馻dir");
+	puts("2.- A帽adir");
 	puts("3.- Eliminar.");
 	puts("4.- Modificar.");
 	puts("5.- Volver");
@@ -167,9 +166,9 @@ void vehiculos_administrador(char *id, usuario *vUsuarios, int nUsuarios, vehicu
 	setlocale( LC_ALL, "spanish");
 	int vehiculoadmin;
 	system("cls");
-	puts("Seleccione una opci髇:");
+	puts("Seleccione una opci贸n:");
 	puts("1.- Listar");
-	puts("2.- A馻dir");
+	puts("2.- A帽adir");
 	puts("3.- Eliminar.");
 	puts("4.- Modificar.");
 	puts("5.- Volver.");
@@ -194,9 +193,9 @@ void viajes_administrador(char *id, usuario *vUsuarios, int nUsuarios, vehiculo 
 	setlocale( LC_ALL, "spanish");
 	int viajesadmin;
 	system("cls");
-	puts("Seleccione una opci髇:");
+	puts("Seleccione una opci贸n:");
 	puts("1.- Listar");
-	puts("2.- A馻dir");
+	puts("2.- A帽adir");
 	puts("3.- Eliminar.");
 	puts("4.- Modificar.");
 	puts("5.- Volver");		
